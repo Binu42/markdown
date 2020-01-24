@@ -4,19 +4,19 @@ export default class Footer extends Component {
   render() {
     return (
       <footer className="mt-auto font-small">
-            <div className="container p-4 text-white">
+            <div className="container py-4 text-white">
                 <div className="mb-md-3 text-center">
                     <a href="https://www.facebook.com/binu.kumar.90857" target='_blank' rel="noopener noreferrer">
-                        <i className="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                        <i className="fab fa-facebook-f fa-lg fa-2x"> </i>
                     </a>
                     <a href="https://github.com/Binu42" target='_blank' rel="noopener noreferrer">
-                        <i className="fab fa-github fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                        <i className="fab fa-github fa-lg fa-2x"> </i>
                     </a>
                     <a href="https://www.linkedin.com/in/binu-kumar-5a7038146/" target='_blank' rel="noopener noreferrer">
-                        <i className="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                        <i className="fab fa-linkedin-in fa-lg fa-2x"> </i>
                     </a>
                     <a href="https://www.instagram.com/binu__42/" target='_blank' rel="noopener noreferrer">
-                        <i className="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                        <i className="fab fa-instagram fa-lg fa-2x"> </i>
                     </a>
                 </div>
             </div>
@@ -25,7 +25,7 @@ export default class Footer extends Component {
 	        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
             </svg>   by <strong>Binu kumar</strong></div>
             
-            <div className="bg-copyright-footer footer-copyright text-white text-center pb-2">© 2020</div>
+            <div className="bg-copyright-footer footer-copyright text-white text-center py-2">© 2020</div>
 
         </footer>
     )

@@ -51,6 +51,10 @@ footer {
   background-color: #464646;
 }
 
+footer i {
+  padding: 5px 30px;
+}
+
 /* about me */
 .about-details {
   font-size: 20px;
