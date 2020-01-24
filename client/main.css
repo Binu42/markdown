@@ -83,3 +83,17 @@ img:hover {
   filter: brightness(100%);
   transform: scale(1.05);
 }
+
+#login-buttons {
+  margin: 14px;
+  font-size: 16px;
+}
+
+#login-buttons a {
+  text-decoration: none;
+}
+
+#login-buttons .login-button,
+.accounts-dialog .login-button {
+  background-color: #464646;
+}

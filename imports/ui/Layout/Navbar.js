@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import Account from './Account'
 
 export default class Navbar extends Component {
   render() {
@@ -18,6 +18,9 @@ export default class Navbar extends Component {
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="/about">About</a>
+              </li>
+              <li className="nav-item">
+                <Account />
               </li>
             </ul>
           </div>
