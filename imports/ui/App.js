@@ -1,13 +1,24 @@
 import React from 'react';
-import Hello from './Hello.js';
-import Info from './Info.js';
+import About from './pages/About'
+import Navbar from './Layout/Navbar'
+import Footer from './Layout/Footer'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 const App = () => (
-  <div>
-    <h1>Welcome to Meteor!</h1>
-    <Hello />
-    <Info />
-  </div>
+  <Router>
+    <div className="app">
+      <Navbar />
+      <Switch>
+        <Route exact path="/about" component={About} />
+      </Switch>
+      <Footer />
+    </div>
+  </Router>
 );
 
 export default App;
