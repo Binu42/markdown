@@ -8,6 +8,10 @@ Meteor.methods({
       content: '',
       sharedWith: []
     })
+  },
+
+  'bin.remove': function (bin) {
+    return Bins.remove(bin);
   }
 })
 
