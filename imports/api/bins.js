@@ -1,3 +1,14 @@
 import { Mongo } from 'meteor/mongo';
 
-export const bins = new Mongo.Collection('bins');
+Meteor.methods({
+  'bins.insert': function () {
+    return Bins.insert({
+      createdAt: new Date(),
+      ownerId: this.userId,
+      content: '',
+      sharedWith: []
+    })
+  }
+})
+
+export const Bins = new Mongo.Collection('bins');
