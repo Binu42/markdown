@@ -14,7 +14,7 @@ class BinMain extends Component {
     }
     return (
       <div className="p-4">
-        <div className="row" style={{ "marginTop": "80px" }}>
+        <div className="row" style={{ "marginTop": "40px" }}>
           <BinEditor bin={this.props.bin} />
           <BinViewer bin={this.props.bin} />
         </div>

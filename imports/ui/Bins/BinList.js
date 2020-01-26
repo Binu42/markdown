@@ -27,9 +27,9 @@ class BinList extends Component {
 
   listName() {
     if (this.props.user) {
-      return <h1>Your Markdowns</h1>
+      return <h1 className="text-center text-muted">Your Markdowns</h1>
     }
-    return <h1>Public Markdowns</h1>
+    return <h1 className="text-center text-muted">Public Markdowns</h1>
   }
 
   render() {
