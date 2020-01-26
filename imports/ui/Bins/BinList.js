@@ -14,17 +14,28 @@ class BinList extends Component {
         return (
           <li className="list-group-item" key={bin._id}>
             <Link to={`/bins/${bin._id}`}> Bin {bin._id}</Link>
-            <span className="float-right">
-              <button className="btn btn-danger pull-right" onClick={() => this.onBinRemove(bin)}>Remove&emsp;<i className="fas fa-trash"></i></button>
-            </span>
+            {
+              this.props.user && <span className="float-right">
+                <button className="btn btn-danger pull-right" onClick={() => this.onBinRemove(bin)}>Remove&emsp;<i className="fas fa-trash"></i></button>
+              </span>
+            }
           </li>
         )
       })
     );
   }
+
+  listName() {
+    if (this.props.user) {
+      return <h1>Your Markdowns</h1>
+    }
+    return <h1>Public Markdowns</h1>
+  }
+
   render() {
     return (
       <div className="container" style={{ "marginTop": "90px" }}>
+        {this.listName()}
         <div className="list-group">
           {this.renderList()}
         </div>
@@ -37,5 +48,5 @@ export default createContainer(() => {
   Meteor.subscribe('bins');
   Meteor.subscribe('sharedBins');
 
-  return { bins: Bins.find({}).fetch() };
+  return { bins: Bins.find({}).fetch(), user: Meteor.userId() };
 }, BinList);

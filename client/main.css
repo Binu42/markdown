@@ -132,7 +132,7 @@ footer i {
 }
 
 .CodeMirror-vscrollbar::-webkit-scrollbar {
-  height: 6px;
+  height: 4px;
   width: 4px;
 }
 

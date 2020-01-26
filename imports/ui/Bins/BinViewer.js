@@ -5,7 +5,7 @@ class BinViewer extends Component {
   render() {
     const htmlContent = markdown.toHTML(this.props.bin.content)
     return (
-      <div id="binViewer" className="col-sm-6 col-md-5" style={{ 'height': "70vh", "overflowY": "scroll", "overflowX": "hidden" }}>
+      <div id="binViewer" className="col-sm-6 col-md-5" style={{ 'height': "70vh", "overflowY": "scroll" }}>
         <div dangerouslySetInnerHTML={{ __html: htmlContent }}></div>
       </div>
     )
