@@ -1,5 +1,5 @@
 {
-  "name": "markdown",
+  "name": "markdown-editor",
   "private": true,
   "scripts": {
     "start": "meteor run",
@@ -11,9 +11,11 @@
     "@babel/runtime": "^7.7.6",
     "connect-route": "^0.1.5",
     "create-react-class": "^15.6.3",
+    "markdown": "^0.5.0",
     "meteor-node-stubs": "^1.0.0",
     "react": "^16.9.0",
     "react-addons-pure-render-mixin": "^15.6.2",
+    "react-codemirror": "^1.0.0",
     "react-dom": "^16.9.0",
     "react-meteor-data": "^0.2.11",
     "react-router": "^3.2.5",

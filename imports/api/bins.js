@@ -12,6 +12,10 @@ Meteor.methods({
 
   'bin.remove': function (bin) {
     return Bins.remove(bin);
+  },
+
+  'bin.update': function (bid, newContent) {
+    return Bins.update(bid, { $set: { content: newContent } })
   }
 })
 

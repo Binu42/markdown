@@ -15,7 +15,7 @@ export default class Navbar extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-sm navbar-light fixed-top">
-        <div className="container">
+        <div className="container" style={{ "padding": "0" }}>
           <Link className="navbar-brand font-weight-bold text-dark" to="/"><i className="fab fa-react text-primary"></i>&emsp;MarkDown</Link>
           <button className="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
             aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
