@@ -16,6 +16,10 @@ Meteor.methods({
 
   'bin.update': function (bid, newContent) {
     return Bins.update(bid, { $set: { content: newContent } })
+  },
+
+  'bin.share': function (bid, email) {
+    return Bins.update(bid, { $push: { sharedWith: email } });
   }
 })
 

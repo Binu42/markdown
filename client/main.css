@@ -102,14 +102,13 @@ footer i {
   position: relative;
   bottom: -20px;
   left: 0;
-  margin-left: 20px;
 }
 
 .CodeMirror {
   height: 70vh;
 }
 
-.btn {
+.btn-share {
   border-radius: 0 0.25rem 0.25rem 0 !important;
 }
 

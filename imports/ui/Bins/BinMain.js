@@ -17,7 +17,11 @@ class BinMain extends Component {
         <div className="row" style={{ "marginTop": "80px" }}>
           <BinEditor bin={this.props.bin} />
           <BinViewer bin={this.props.bin} />
-          <BinShare bin={this.props.id}></BinShare>
+        </div>
+        <div className="row">
+          <div className="col-md-12">
+            <BinShare bin={this.props.bin}></BinShare>
+          </div>
         </div>
       </div>
     )
