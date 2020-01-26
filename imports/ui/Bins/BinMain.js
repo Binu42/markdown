@@ -31,6 +31,7 @@ class BinMain extends Component {
 export default createContainer((props) => {
   const { bid } = props.match.params;
   Meteor.subscribe('bins');
+  Meteor.subscribe('sharedBins');
 
   return { bin: Bins.findOne(bid) }
 }, BinMain)
