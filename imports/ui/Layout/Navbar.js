@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { browserHistory } from 'react-router'
 
 export default class Navbar extends Component {
-  onBinClick = (e, history) => {
+  onBinClick = (e) => {
     e.preventDefault();
 
     Meteor.call('bins.insert', (err, bId) => {

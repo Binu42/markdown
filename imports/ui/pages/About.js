@@ -2,7 +2,7 @@ import React from 'react';
 
 function About() {
   return (
-    <div id="about" className='container' style={{ "marginTop": "80px" }}>
+    <div id="about" className='container' style={{ "marginTop": "60px" }}>
       <div className="row my-4">
         <div className="col-md-4">
           <div className="d-flex justify-content-center align-items-center" style={{ "height": "400px" }}>
