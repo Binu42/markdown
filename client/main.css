@@ -104,6 +104,12 @@ footer i {
   left: 0;
 }
 
+@media(max-width: 570px){
+  #binView{
+    margin-top: 60px;
+  }
+}
+
 .CodeMirror {
   height: 70vh;
 }

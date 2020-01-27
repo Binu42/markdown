@@ -9,7 +9,7 @@ class BinEditor extends Component {
   render() {
     console.log(this.props.bin)
     return (
-      <div className="col-sm-6 col-md-7" style={{ "height": "70vh" }}>
+      <div className="col-sm-6 col-md-6" style={{ "height": "70vh" }}>
         <h4 className="text-center text-muted">Markdown Input</h4>
         <CodeMirror
           onChange={this.onEditorChange.bind(this)}
