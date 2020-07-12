@@ -213,14 +213,14 @@ img {
 .Resizer.vertical {
   width: 11px;
   margin: 0 -5px;
-  border-left: 5px solid rgba(255, 41, 41, 0);
-  border-right: 5px solid rgba(255, 255, 255, 0);
+  border-left: 5px solid rgba(121, 107, 107, 0.4);
+  border-right: 5px solid rgba(121, 107, 107, 0.4);
   cursor: col-resize;
 }
 
 .Resizer.vertical:hover {
-  border-left: 5px solid rgba(0, 0, 0, 0.5);
-  border-right: 5px solid rgba(0, 0, 0, 0.5);
+  border-left: 5px solid rgba(0, 0, 0, 0.8);
+  border-right: 5px solid rgba(0, 0, 0, 0.8);
 }
 .Resizer.disabled {
   cursor: not-allowed;

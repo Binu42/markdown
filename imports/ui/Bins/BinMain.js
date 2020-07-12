@@ -19,7 +19,11 @@ class BinMain extends Component {
       <div className='p-4'>
         {window.innerWidth > 635 ? (
           <div className='row' style={{ height: '100vh', marginTop: '40px' }}>
-            <SplitPane split='vertical' defaultSize={window.innerHeight}>
+            <SplitPane
+              split='vertical'
+              style={{ padding: '0 10px' }}
+              defaultSize={window.innerHeight}
+            >
               <BinEditor bin={this.props.bin} />
               <BinViewer bin={this.props.bin} />
             </SplitPane>

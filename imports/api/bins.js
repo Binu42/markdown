@@ -1,13 +1,16 @@
 import { Mongo } from 'meteor/mongo';
 
 Meteor.methods({
-  'bins.insert': function () {
+  'bins.insert': function (par) {
+    console.log(par);
     return Bins.insert({
       createdAt: new Date(),
       ownerId: this.userId,
-      content: '',
-      sharedWith: []
-    })
+      content: '#Thanks for creating Bin',
+      name: par.name,
+      description: par.description,
+      sharedWith: [],
+    });
   },
 
   'bin.remove': function (bin) {
@@ -15,12 +18,12 @@ Meteor.methods({
   },
 
   'bin.update': function (bid, newContent) {
-    return Bins.update(bid, { $set: { content: newContent } })
+    return Bins.update(bid, { $set: { content: newContent } });
   },
 
   'bin.share': function (bid, email) {
     return Bins.update(bid, { $push: { sharedWith: email } });
-  }
-})
+  },
+});
 
 export const Bins = new Mongo.Collection('bins');

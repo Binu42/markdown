@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import { Bins } from '../imports/api/bins'
+import { Bins } from '../imports/api/bins';
 
 Meteor.startup(() => {
   Meteor.publish('bins', function () {
@@ -15,8 +15,8 @@ Meteor.startup(() => {
 
     const email = user.emails[0].address;
     // console.log(email)
-    return (Bins.find({
-      sharedWith: { $elemMatch: { $eq: email } }
-    }))
-  })
+    return Bins.find({
+      sharedWith: { $elemMatch: { $eq: email } },
+    });
+  });
 });

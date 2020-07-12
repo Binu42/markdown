@@ -7,13 +7,13 @@ class BinViewer extends Component {
     return (
       <div
         id='binView'
-        className={window.innerWidth < 635 ? 'col-md-6 col-sm-6 p-0' : ''}
+        className={window.innerWidth < 635 ? 'col-md-6 col-sm-6 p-0' : 'px-2'}
       >
         <h4 className='text-center text-muted'>Output</h4>
         <div
           id='binViewer'
           dangerouslySetInnerHTML={{ __html: htmlContent }}
-          style={{ height: '100vh', overflowY: 'scroll', padding: '10px' }}
+          style={{ height: '100vh', overflowY: 'auto', padding: '10px' }}
         ></div>
       </div>
     );

@@ -8,7 +8,9 @@ class BinEditor extends Component {
   }
   render() {
     return (
-      <div className={window.innerWidth < 635 ? 'col-sm-6 col-md-6 p-0' : ''}>
+      <div
+        className={window.innerWidth < 635 ? 'col-sm-6 col-md-6 p-0' : 'px-2'}
+      >
         <h4 className='text-center text-muted'>Markdown Input</h4>
         <CodeMirror
           onChange={this.onEditorChange.bind(this)}
