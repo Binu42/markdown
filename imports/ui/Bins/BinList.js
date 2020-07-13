@@ -160,7 +160,18 @@ class BinList extends Component {
       bins.forEach((bin) => {
         if (bin.ownerId === null) {
           if (bin.sharedWith.length === 0) publicBins.push(bin);
-          else sharedBins.push(bin);
+          else if (bin.sharedWith.length !== 0) {
+            let c = 0;
+            bin.sharedWith.find((email) => {
+              if (email === Meteor.user().emails[0].address) {
+                c++;
+                sharedBins.push(bin);
+              }
+            });
+            if (c === 0) {
+              publicBins.push(bin);
+            }
+          }
         } else if (bin.ownerId === user) userBins.push(bin);
       });
     } else {
