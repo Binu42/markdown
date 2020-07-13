@@ -13,6 +13,13 @@ Meteor.methods({
     });
   },
 
+  'bin.updateDetails': (par) => {
+    const { bid, name, description } = par;
+    return Bins.update(bid, {
+      $set: { name, description },
+    });
+  },
+
   'bin.remove': function (bin) {
     return Bins.remove(bin);
   },

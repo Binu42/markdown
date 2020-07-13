@@ -8,20 +8,47 @@ class BinList extends Component {
     Meteor.call('bin.remove', bin);
   }
 
-  renderList() {
-    if (this.props.bins.length === 0) {
+  constructor(props) {
+    super(props);
+    this.state = {
+      bid: '',
+      name: '',
+      description: '',
+    };
+  }
+
+  onBinUpdate() {
+    Meteor.call('bin.updateDetails', this.state);
+  }
+
+  renderList(bins, user) {
+    if (bins.length === 0) {
       return (
         <li className='list-group-item text-center'>
-          No bin is available, Create bin to see it here
+          You have not created any Bin :), Create bin to see it here
         </li>
       );
     }
-    return this.props.bins.map((bin) => {
+    return bins.map((bin) => {
       return (
         <li className='list-group-item' key={bin._id}>
           <Link to={`/bins/${bin._id}`}> {bin.name}</Link>
-          {this.props.user && (
+          {user && (
             <span className='float-right'>
+              <button
+                className='btn btn-success'
+                data-toggle='modal'
+                onClick={() =>
+                  this.setState({
+                    bid: bin._id,
+                    name: bin.name,
+                    description: bin.description,
+                  })
+                }
+                data-target='#edit'
+              >
+                Edit&emsp;<i className='fas fa-edit'></i>
+              </button>{' '}
               <button
                 className='btn btn-danger pull-right'
                 onClick={() => this.onBinRemove(bin)}
@@ -37,6 +64,86 @@ class BinList extends Component {
     });
   }
 
+  handleInputChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
+
+  editBinModal() {
+    return (
+      <div
+        className='modal fade'
+        id='edit'
+        tabIndex='-1'
+        role='dialog'
+        aria-labelledby='edit'
+        aria-hidden='true'
+      >
+        <div className='modal-dialog' role='document'>
+          <div className='modal-content'>
+            <div className='modal-header'>
+              <h5 className='modal-title text-uppercase' id='editTitle'>
+                Bin Description
+              </h5>
+              <button
+                type='button'
+                className='close'
+                data-dismiss='modal'
+                aria-label='Close'
+              >
+                <span aria-hidden='true'>&times;</span>
+              </button>
+            </div>
+            <div className='modal-body'>
+              <div className='form-group'>
+                <label htmlFor='name' className='text-dark'>
+                  Bin Name
+                </label>
+                <input
+                  type='text'
+                  id='name'
+                  name='name'
+                  className='form-control'
+                  placeholder='Enter Bin Name'
+                  value={this.state.name}
+                  onChange={this.handleInputChange}
+                  required
+                />
+                <label htmlFor='description'>Description</label>
+                <textarea
+                  className='form-control'
+                  name='description'
+                  id='description'
+                  name='description'
+                  placeholder='Enter Bin Description Here'
+                  value={this.state.description}
+                  onChange={this.handleInputChange}
+                  rows='3'
+                ></textarea>
+                <button
+                  type='submit'
+                  onClick={this.onBinUpdate.bind(this)}
+                  className='btn btn-success mt-2'
+                  data-dismiss='modal'
+                >
+                  Update
+                </button>
+              </div>
+            </div>
+            <div className='modal-footer'>
+              <button
+                type='button'
+                className='btn btn-warning'
+                data-dismiss='modal'
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   listName() {
     if (this.props.user) {
       return <h1 className='text-center text-muted'>Your Markdowns</h1>;
@@ -45,10 +152,30 @@ class BinList extends Component {
   }
 
   render() {
+    const { bins, user } = this.props;
+    const userBins = [];
+    const publicBins = [];
+    bins.forEach((bin) => {
+      if (bin.ownerId === null) publicBins.push(bin);
+      else userBins.push(bin);
+    });
     return (
       <div className='container' style={{ marginTop: '90px' }}>
-        {this.listName()}
-        <div className='list-group'>{this.renderList()}</div>
+        {user && (
+          <>
+            <h1 className='text-center text-muted'>Your Markdowns</h1>
+            <div className='list-group'>{this.renderList(userBins, user)}</div>
+          </>
+        )}
+        {publicBins.length > 0 && (
+          <>
+            <h1 className='text-center text-muted mt-4'>public Markdowns</h1>
+            <div className='list-group'>
+              {this.renderList(publicBins, null)}
+            </div>
+          </>
+        )}
+        {this.editBinModal()}
       </div>
     );
   }
