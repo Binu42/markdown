@@ -49,12 +49,14 @@ class BinList extends Component {
               >
                 Edit&emsp;<i className='fas fa-edit'></i>
               </button>{' '}
-              <button
-                className='btn btn-danger pull-right'
-                onClick={() => this.onBinRemove(bin)}
-              >
-                Remove&emsp;<i className='fas fa-trash'></i>
-              </button>
+              {user === bin.ownerId && (
+                <button
+                  className='btn btn-danger pull-right'
+                  onClick={() => this.onBinRemove(bin)}
+                >
+                  Remove&emsp;<i className='fas fa-trash'></i>
+                </button>
+              )}
             </span>
           )}
           <br />
@@ -163,7 +165,7 @@ class BinList extends Component {
           else if (bin.sharedWith.length !== 0) {
             let c = 0;
             bin.sharedWith.find((email) => {
-              if (email === Meteor.user().emails[0].address) {
+              if (Meteor.user() && email === Meteor.user().emails[0].address) {
                 c++;
                 sharedBins.push(bin);
               }
@@ -191,7 +193,7 @@ class BinList extends Component {
           <>
             <h1 className='text-center text-muted mt-4'>Shared Markdowns</h1>
             <div className='list-group'>
-              {this.renderList(sharedBins, null)}
+              {this.renderList(sharedBins, user)}
             </div>
           </>
         )}

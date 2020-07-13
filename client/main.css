@@ -106,14 +106,14 @@ nav {
 }
 
 .rounded-social-buttons .social-button.instagram {
-  background: #125688;
+  background: #f88171;
 }
 
 .rounded-social-buttons .social-button.instagram:hover,
 .rounded-social-buttons .social-button.instagram:focus {
-  color: #125688;
+  color: #f88171;
   background: #fefefe;
-  border-color: #125688;
+  border-color: #f88171;
 }
 
 /* footer copyright background */
