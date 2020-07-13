@@ -16,7 +16,6 @@ nav {
 .heart {
   fill: rgb(251, 44, 44);
   position: relative;
-  top: 5px;
   width: 20px;
   margin: 2px;
   animation: pulse 1s ease infinite;
@@ -28,31 +27,93 @@ nav {
 }
 
 .shadow-soft {
-  box-shadow: 6px 6px 12px #bbbbbbbd, -6px -6px 12px #bbbbbb59;
+  box-shadow: 6px 6px 12px #dbdbdb50, -6px -6px 12px #afafaf42;
 }
 
 .list-group-item:hover {
   box-shadow: inset 2px 2px 5px #eaebec, inset -3px -3px 7px rgb(240, 239, 239);
 }
 
-/* facebook font */
-.fa-facebook-f {
-  color: #0062ff;
+.rounded-social-buttons {
+  text-align: center;
 }
 
-/* Github font */
+.rounded-social-buttons .social-button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  width: 3.125rem;
+  height: 3.125rem;
+  border: 0.125rem solid transparent;
+  padding: 0;
+  text-decoration: none;
+  text-align: center;
+  color: #fefefe;
+  font-size: 1.5625rem;
+  font-weight: normal;
+  line-height: 2em;
+  border-radius: 1.6875rem;
+  transition: all 0.5s ease;
+  margin: 1rem;
+  box-shadow: 6px 6px 12px #4e4e4ed0, -6px -6px 12px #524c4ce3 !important;
+}
+
+.rounded-social-buttons .social-button:hover,
+.rounded-social-buttons .social-button:focus {
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.fa-facebook-f,
+.fa-linkedin,
+.fa-instagram,
 .fa-github {
-  color: #fff;
+  font-size: 25px;
 }
 
-/* Linkedin font */
-.fa-linkedin-in {
-  color: #00eeff;
+.rounded-social-buttons .social-button.facebook {
+  background: #3b5998;
 }
 
-/* instagram font */
-.fa-instagram {
-  color: #f84747;
+.rounded-social-buttons .social-button.facebook:hover,
+.rounded-social-buttons .social-button.facebook:focus {
+  color: #3b5998;
+  background: #fefefe;
+  border-color: #3b5998;
+}
+
+.rounded-social-buttons .social-button.github {
+  background: #5c5c5c;
+}
+
+.rounded-social-buttons .social-button.github:hover,
+.rounded-social-buttons .social-button.github:focus {
+  color: #5c5c5c;
+  background: #fefefe;
+  border-color: #5c5c5c;
+}
+
+.rounded-social-buttons .social-button.linkedin {
+  background: #007bb5;
+}
+
+.rounded-social-buttons .social-button.linkedin:hover,
+.rounded-social-buttons .social-button.linkedin:focus {
+  color: #007bb5;
+  background: #fefefe;
+  border-color: #007bb5;
+}
+
+.rounded-social-buttons .social-button.instagram {
+  background: #125688;
+}
+
+.rounded-social-buttons .social-button.instagram:hover,
+.rounded-social-buttons .social-button.instagram:focus {
+  color: #125688;
+  background: #fefefe;
+  border-color: #125688;
 }
 
 /* footer copyright background */
@@ -62,10 +123,6 @@ nav {
 
 footer {
   background-color: #464646;
-}
-
-footer i {
-  padding: 5px 30px;
 }
 
 /* about me */
@@ -78,7 +135,7 @@ footer i {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.3);
+    transform: scale(1.2);
   }
   100% {
     transform: scale(1);
@@ -102,7 +159,7 @@ img {
 }
 
 #login-buttons {
-  margin: 14px;
+  margin: 13px 14px;
   font-size: 16px;
 }
 
