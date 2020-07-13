@@ -154,15 +154,16 @@ class BinList extends Component {
   render() {
     const { bins, user } = this.props;
     const userBins = [];
-    const publicBins = [];
+    let publicBins = [];
     const sharedBins = [];
-    bins.forEach((bin) => {
-      if (bin.ownerId === null) {
-        if (bin.sharedWith.length === 0) publicBins.push(bin);
-        else sharedBins.push(bin);
-      } else if (bin.ownerId === user) userBins.push(bin);
-    });
-    console.log(userBins, publicBins, sharedBins);
+    user &&
+      bins.forEach((bin) => {
+        if (bin.ownerId === null) {
+          if (bin.sharedWith.length === 0) publicBins.push(bin);
+          else sharedBins.push(bin);
+        } else if (bin.ownerId === user) userBins.push(bin);
+      });
+    publicBins = bins;
     return (
       <div className='container' style={{ marginTop: '90px' }}>
         {user && (
