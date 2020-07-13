@@ -156,14 +156,17 @@ class BinList extends Component {
     const userBins = [];
     let publicBins = [];
     const sharedBins = [];
-    user &&
+    if (user) {
       bins.forEach((bin) => {
         if (bin.ownerId === null) {
           if (bin.sharedWith.length === 0) publicBins.push(bin);
           else sharedBins.push(bin);
         } else if (bin.ownerId === user) userBins.push(bin);
       });
-    publicBins = bins;
+    } else {
+      publicBins = bins;
+    }
+
     return (
       <div className='container' style={{ marginTop: '90px' }}>
         {user && (
