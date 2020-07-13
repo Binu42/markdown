@@ -155,10 +155,14 @@ class BinList extends Component {
     const { bins, user } = this.props;
     const userBins = [];
     const publicBins = [];
+    const sharedBins = [];
     bins.forEach((bin) => {
-      if (bin.ownerId === null) publicBins.push(bin);
-      else userBins.push(bin);
+      if (bin.ownerId === null) {
+        if (bin.sharedWith.length === 0) publicBins.push(bin);
+        else sharedBins.push(bin);
+      } else if (bin.ownerId === user) userBins.push(bin);
     });
+    console.log(userBins, publicBins, sharedBins);
     return (
       <div className='container' style={{ marginTop: '90px' }}>
         {user && (
@@ -167,6 +171,16 @@ class BinList extends Component {
             <div className='list-group'>{this.renderList(userBins, user)}</div>
           </>
         )}
+
+        {sharedBins.length > 0 && (
+          <>
+            <h1 className='text-center text-muted mt-4'>Shared Markdowns</h1>
+            <div className='list-group'>
+              {this.renderList(sharedBins, null)}
+            </div>
+          </>
+        )}
+
         {publicBins.length > 0 && (
           <>
             <h1 className='text-center text-muted mt-4'>public Markdowns</h1>
