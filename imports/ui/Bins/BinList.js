@@ -179,7 +179,7 @@ class BinList extends Component {
     }
 
     return (
-      <div className='container' style={{ marginTop: '90px' }}>
+      <div className='container' style={{ marginTop: '70px' }}>
         {user && (
           <>
             <h1 className='text-center text-muted'>Your Markdowns</h1>
@@ -198,7 +198,7 @@ class BinList extends Component {
 
         {publicBins.length > 0 && (
           <>
-            <h1 className='text-center text-muted mt-4'>public Markdowns</h1>
+            <h1 className='text-center text-muted mt-4'>Public Markdowns</h1>
             <div className='list-group'>
               {this.renderList(publicBins, null)}
             </div>

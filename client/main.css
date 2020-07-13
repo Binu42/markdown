@@ -4,7 +4,7 @@ body {
 
 nav {
   background-color: #ecf4f3;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 0 10px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 2px 4px 0 #d3d3d3dc, 0 0 10px 0 #fff4f4f5;
 }
 
 .app {
@@ -20,6 +20,19 @@ nav {
   width: 20px;
   margin: 2px;
   animation: pulse 1s ease infinite;
+}
+
+.list-group {
+  box-shadow: 6px 6px 12px #f8f4f4, -6px -6px 12px #f8f4f4;
+  transition: all 800ms ease-in-out;
+}
+
+.shadow-soft {
+  box-shadow: 6px 6px 12px #bbbbbbbd, -6px -6px 12px #bbbbbb59;
+}
+
+.list-group-item:hover {
+  box-shadow: inset 2px 2px 5px #eaebec, inset -3px -3px 7px rgb(240, 239, 239);
 }
 
 /* facebook font */

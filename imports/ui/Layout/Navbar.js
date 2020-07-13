@@ -35,7 +35,7 @@ export default class Navbar extends Component {
         aria-hidden='true'
       >
         <div className='modal-dialog' role='document'>
-          <div className='modal-content'>
+          <div className='modal-content shadow-soft'>
             <div className='modal-header'>
               <h5 className='modal-title text-uppercase' id='loginTitle'>
                 Bin Description
@@ -64,7 +64,9 @@ export default class Navbar extends Component {
                     onChange={this.handleInputChange}
                     required
                   />
-                  <label htmlFor='description'>Description</label>
+                  <label htmlFor='description' className='text-dark'>
+                    Description
+                  </label>
                   <textarea
                     className='form-control'
                     name='description'
