@@ -19,6 +19,7 @@ export default class Navbar extends Component {
 
     if (this.state.name !== '') {
       Meteor.call('bins.insert', this.state, (err, bId) => {
+        // this should be done better
         browserHistory.push(`/bins/${bId}`);
         window.location = `/bins/${bId}`;
       });
